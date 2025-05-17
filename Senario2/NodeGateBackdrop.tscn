@@ -1,0 +1,29 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 5.93733
+margin_top = 127.844
+margin_right = 119.937
+margin_bottom = 167.844
+rect_rotation = -90.0
+text = "BUS INSIDE"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 26.0282
+margin_top = 59.9008
+margin_right = 66.0282
+margin_bottom = 120.901
+text = ">
+>
+>
+>"
+__meta__ = {
+"_edit_use_anchors_": false
+}

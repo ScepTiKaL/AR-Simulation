@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://hamburger/exit.gd" type="Script" id=1]
+
+[node name="Panel" type="Panel"]
+margin_right = 280.0
+margin_bottom = 180.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 280.0
+margin_bottom = 180.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="CenterContainer" parent="VBoxContainer"]
+margin_right = 280.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Title"]
+margin_left = 91.0
+margin_right = 188.0
+margin_bottom = 14.0
+text = "Tracked Routes"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 280.0
+margin_bottom = 22.0
+
+[node name="Message" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 26.0
+margin_right = 280.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer/Message"]
+margin_left = 51.0
+margin_right = 228.0
+margin_bottom = 14.0
+text = "You have no tracked routes."
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1.49831
+margin_top = 1.12373
+margin_right = 21.4983
+margin_bottom = 21.1237
+text = "X"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

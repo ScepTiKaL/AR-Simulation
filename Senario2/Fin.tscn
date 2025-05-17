@@ -1,0 +1,19 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 42.1126
+margin_top = 46.4264
+margin_right = 157.113
+margin_bottom = 61.4264
+rect_scale = Vector2( 2, 2 )
+text = "Senario Finished"
+__meta__ = {
+"_edit_use_anchors_": false
+}

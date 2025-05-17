@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://menu/mainmenu.gd" type="Script" id=1]
+[ext_resource path="res://NAVIGATION/navigation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Senario2/Senario2_Part1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://planatrip/PlanATrip.tscn" type="PackedScene" id=5]
+
+[node name="mainmenu" type="Control"]
+margin_right = 1025.0
+margin_bottom = 598.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 256.681
+margin_top = 131.857
+margin_right = 787.681
+margin_bottom = 472.857
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scenes = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]

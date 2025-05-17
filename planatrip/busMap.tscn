@@ -1,0 +1,282 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://planatrip/bus.png" type="Texture" id=1]
+[ext_resource path="res://planatrip/train.png" type="Texture" id=2]
+[ext_resource path="res://planatrip/busMap.gd" type="Script" id=3]
+[ext_resource path="res://hamburger/exit.gd" type="Script" id=4]
+[ext_resource path="res://planatrip/busButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://planatrip/trainIcon.png" type="Texture" id=6]
+[ext_resource path="res://planatrip/police.png" type="Texture" id=7]
+[ext_resource path="res://planatrip/hospital.png" type="Texture" id=8]
+[ext_resource path="res://planatrip/position.png" type="Texture" id=9]
+[ext_resource path="res://planatrip/destination.png" type="Texture" id=10]
+[ext_resource path="res://planatrip/station.png" type="Texture" id=11]
+
+[node name="busMap" type="Panel"]
+anchor_bottom = 0.001
+margin_left = 0.221954
+margin_top = 0.3172
+margin_right = 280.222
+margin_bottom = 179.717
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bus" type="Sprite" parent="."]
+position = Vector2( 140, 90 )
+texture = ExtResource( 1 )
+
+[node name="train" type="Sprite" parent="."]
+position = Vector2( 140, 90 )
+texture = ExtResource( 2 )
+
+[node name="Jesmond" type="Label" parent="."]
+margin_left = -4.59933
+margin_top = 130.872
+margin_right = 50.4007
+margin_bottom = 144.872
+text = "Jesmond"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tafe" type="Label" parent="."]
+margin_left = 184.81
+margin_top = 53.9377
+margin_right = 239.81
+margin_bottom = 67.9377
+text = "Tafe"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hamilton" type="Label" parent="."]
+margin_left = 146.143
+margin_top = 168.921
+margin_right = 205.143
+margin_bottom = 182.921
+text = "Hamilton"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Waratah" type="Label" parent="."]
+margin_left = 47.2477
+margin_top = 98.2585
+margin_right = 99.2477
+margin_bottom = 112.259
+text = "Waratah"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Maryville" type="Label" parent="."]
+margin_left = 229.549
+margin_top = 99.5129
+margin_right = 287.549
+margin_bottom = 113.513
+rect_scale = Vector2( 0.995998, 1 )
+text = "Maryville"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exchange" type="Label" parent="."]
+margin_left = 220.363
+margin_top = 153.549
+margin_right = 279.363
+margin_bottom = 167.549
+rect_scale = Vector2( 0.995998, 1 )
+text = "Exchange"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "X"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="legendButton" type="Button" parent="."]
+margin_left = 260.0
+margin_right = 280.0
+margin_bottom = 20.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="uniDest" type="Button" parent="."]
+margin_left = 25.8502
+margin_top = 41.7093
+margin_right = 88.8502
+margin_bottom = 61.7093
+text = "UON"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="busButtons" type="Node" parent="."]
+
+[node name="bus15" parent="busButtons" instance=ExtResource( 5 )]
+visible = false
+margin_left = 210.732
+margin_top = 138.991
+margin_right = 242.732
+margin_bottom = 170.991
+rect_scale = Vector2( 0.5, 0.5 )
+toPoint = Vector2( -350, -20 )
+colour = Color( 0.0470588, 0.74902, 0.960784, 1 )
+routeName = "B15"
+
+[node name="Line2D" type="Line2D" parent="busButtons/bus15"]
+points = PoolVector2Array( -347.001, -17.996, -417.838, -235.956 )
+width = 2.0
+default_color = Color( 0.0470588, 0.74902, 0.960784, 1 )
+
+[node name="train2" parent="busButtons" instance=ExtResource( 5 )]
+visible = false
+margin_left = 223.633
+margin_top = 140.248
+margin_right = 255.633
+margin_bottom = 172.248
+rect_scale = Vector2( 0.5, 0.5 )
+toPoint = Vector2( -350, -250 )
+colour = Color( 0.960784, 0.47451, 0.0470588, 1 )
+texture = ExtResource( 6 )
+routeName = "T2"
+
+[node name="bus50" parent="busButtons" instance=ExtResource( 5 )]
+visible = false
+margin_left = 193.648
+margin_top = 163.603
+margin_right = 225.648
+margin_bottom = 195.603
+rect_scale = Vector2( 0.5, 0.5 )
+toPoint = Vector2( -300, 0 )
+colour = Color( 0.0470588, 0.74902, 0.960784, 1 )
+routeName = "B50"
+
+[node name="Line2D2" type="Line2D" parent="busButtons/bus50"]
+position = Vector2( 34.1686, -49.2234 )
+points = PoolVector2Array( -334.741, 52.1599, -303.409, -15.9526, -347.001, -18.6771, -416.476, -235.956 )
+width = 2.0
+default_color = Color( 0.0470588, 0.74902, 0.960784, 1 )
+
+[node name="Line2D4" type="Line2D" parent="busButtons/bus50"]
+position = Vector2( 34.1686, -49.2234 )
+points = PoolVector2Array( -35.0453, 50.1165, 31.705, 30.3639 )
+width = 2.0
+default_color = Color( 0.0470588, 0.74902, 0.960784, 1 )
+
+[node name="bus21" parent="busButtons" instance=ExtResource( 5 )]
+visible = false
+margin_left = 226.859
+margin_top = 137.738
+margin_right = 258.859
+margin_bottom = 169.738
+rect_scale = Vector2( 0.5, 0.5 )
+toPoint = Vector2( 0, -100 )
+colour = Color( 0.0470588, 0.74902, 0.960784, 1 )
+routeName = "B21"
+
+[node name="Line2D3" type="Line2D" parent="busButtons/bus21"]
+position = Vector2( -32.2549, 2.50552 )
+points = PoolVector2Array( 33.0672, -103.818, -0.989075, -169.887, 24.2126, -223.696, -49.349, -276.143, -172.633, -152.859, -165.821, -140.599, -191.704, -129.701, -219.63, -13.2281, -346.32, -25.4884, -416.476, -237.318 )
+width = 2.0
+default_color = Color( 0.0470588, 0.74902, 0.960784, 1 )
+
+[node name="trainStations" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="trainStations"]
+visible = false
+margin_left = 236.691
+margin_top = 139.971
+margin_right = 256.691
+margin_bottom = 159.971
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="trainStations"]
+visible = false
+margin_left = 45.6354
+margin_top = 19.7526
+margin_right = 65.6354
+margin_bottom = 39.7526
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = 20.0
+margin_right = 260.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selectDest" type="Label" parent="CenterContainer"]
+margin_left = 57.0
+margin_top = 3.0
+margin_right = 183.0
+margin_bottom = 17.0
+text = "Select a destination"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="policeStations" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="policeStations"]
+visible = false
+margin_left = 119.376
+margin_top = 37.2827
+margin_right = 139.376
+margin_bottom = 57.2827
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hospitals" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="hospitals"]
+visible = false
+margin_left = 52.6976
+margin_top = 146.621
+margin_right = 72.6976
+margin_bottom = 166.621
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="youAreHere" type="TextureRect" parent="."]
+margin_left = 226.564
+margin_top = 139.452
+margin_right = 246.564
+margin_bottom = 159.452
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="destination" type="TextureRect" parent="."]
+visible = false
+margin_left = 46.6033
+margin_top = 31.5469
+margin_right = 66.6033
+margin_bottom = 51.5469
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Senario2/btnGO.gd" type="Script" id=1]
+[ext_resource path="res://Senario2/notification_sound.ogg" type="AudioStream" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btnGO" type="Button" parent="."]
+margin_left = 119.19
+margin_top = 98.53
+margin_right = 181.19
+margin_bottom = 118.53
+text = "GO"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NotificationStream" type="AudioStreamPlayer" parent="btnGO"]
+stream = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 49.8379
+margin_top = 32.8974
+margin_right = 254.838
+margin_bottom = 72.8974
+bbcode_enabled = true
+bbcode_text = "[center]Press this button to advance time by 15 minutes[/center]"
+text = "Press this button to advance time by 15 minutes"

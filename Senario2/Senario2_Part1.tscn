@@ -1,0 +1,150 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gui_panel_3d.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Senario2/SpeechBubbleUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Senario2/TimeButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://bus.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Senario2/bus_has_arrived_notification.png" type="Texture" id=6]
+[ext_resource path="res://Senario2/NodeGateLeft.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Senario2/NodeGateRight.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Senario2/NodeGateBackdrop.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Senario2/NodeGateLeft_Enter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Senario2/NodeGateRight_Enter.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Senario2/BusTrigger.gd" type="Script" id=12]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="PlaneMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.133333, 0.109804, 0.109804, 1 )
+
+[sub_resource type="PlaneMesh" id=4]
+
+[sub_resource type="PlaneMesh" id=5]
+
+[sub_resource type="PlaneMesh" id=6]
+
+[sub_resource type="BoxShape" id=7]
+
+[node name="Senario2_Part1" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.999433, 0, -0.0336609, 0, 1, 0, 0.0336609, 0, -0.999433, -1.08484, 1, -4.16357 )
+
+[node name="Environment" type="Spatial" parent="."]
+
+[node name="Floor" type="MeshInstance" parent="Environment"]
+transform = Transform( 6, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, -2.00365 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Road" type="MeshInstance" parent="Environment"]
+transform = Transform( 6, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 4.01626 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Road Marker" type="MeshInstance" parent="Environment/Road"]
+transform = Transform( 0.08, 0, 0, 0, 1, 0, 0, 0, 0.05, 0.584871, 0.00980318, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Road Marker2" type="MeshInstance" parent="Environment/Road"]
+transform = Transform( 0.08, 0, 0, 0, 1, 0, 0, 0, 0.05, 0.245768, 0.00980318, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Road Marker3" type="MeshInstance" parent="Environment/Road"]
+transform = Transform( 0.08, 0, 0, 0, 1, 0, 0, 0, 0.05, -0.0874553, 0.00980318, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Road Marker4" type="MeshInstance" parent="Environment/Road"]
+transform = Transform( 0.08, 0, 0, 0, 1, 0, 0, 0, 0.05, -0.415531, 0.00980318, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Road Marker5" type="MeshInstance" parent="Environment/Road"]
+transform = Transform( 0.08, 0, 0, 0, 1, 0, 0, 0, 0.05, -0.749101, 0.00980318, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Wall" type="MeshInstance" parent="Environment"]
+transform = Transform( 6, 0, 0, 0, -4.37114e-08, -3, 0, 1, -1.31134e-07, 0, 3, -5.964 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Speechbubble" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, -0.624865, 3.60385, 2.82589 )
+gui_scene = ExtResource( 3 )
+
+[node name="AdvanceTime" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.5, 0, -3.89414e-07, 0, 0.5, 0, 1.94707e-07, 0, -1, 3.00215, 1.17259, 0.623271 )
+gui_scene = ExtResource( 4 )
+
+[node name="bus" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26826, 0.136743, 3.41922 )
+visible = false
+mesh = ExtResource( 5 )
+material/0 = null
+
+[node name="bus_has_arrived" type="TextureRect" parent="."]
+visible = false
+margin_left = 6.3137
+margin_top = 7.815
+margin_right = 903.314
+margin_bottom = 59.815
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GateLeft_Warning" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.15, 0, -3.89414e-07, 0, 0.15, 0, 5.84122e-08, 0, -1, 2.187, 1, 2.3 )
+visible = false
+gui_scene = ExtResource( 7 )
+
+[node name="GateLeft_Enter" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.15, 0, -3.89414e-07, 0, 0.15, 0, 5.84122e-08, 0, -1, 2.187, 1, 2.3 )
+visible = false
+gui_scene = ExtResource( 10 )
+
+[node name="GateLeft_Enter_Green" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.15, 0, -3.89414e-07, 0, 0.15, 0, 5.84122e-08, 0, -1, 2.187, 1, 2.3 )
+visible = false
+gui_scene = ExtResource( 10 )
+
+[node name="GateRight_Warning" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.15, 0, -3.89414e-07, 0, 0.15, 0, 5.84122e-08, 0, -1, 1.741, 1, 2.3 )
+visible = false
+gui_scene = ExtResource( 8 )
+
+[node name="GateRight_Enter" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.15, 0, -3.89414e-07, 0, 0.15, 0, 5.84122e-08, 0, -1, 1.741, 1, 2.3 )
+visible = false
+gui_scene = ExtResource( 11 )
+
+[node name="GateRight_Enter_Green" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.15, 0, -3.89414e-07, 0, 0.15, 0, 5.84122e-08, 0, -1, 1.741, 1, 2.3 )
+visible = false
+gui_scene = ExtResource( 11 )
+
+[node name="GateBackdrop" parent="." instance=ExtResource( 2 )]
+transform = Transform( 7.49435e-08, -0.46, -3.89414e-07, -0.46, -7.49435e-08, 4.63048e-21, -2.91841e-14, 1.79131e-07, -1, 1.96972, 1.11677, 2.4035 )
+visible = false
+gui_scene = ExtResource( 9 )
+
+[node name="BusTrigger" type="MeshInstance" parent="."]
+transform = Transform( -0.5, -3.25841e-07, 3.18518e-14, 0, -1.62921e-07, -0.6, 1.62921e-07, -1, 9.77524e-08, 1.94855, 1.24847, 3.10004 )
+visible = false
+mesh = SubResource( 6 )
+material/0 = null
+script = ExtResource( 12 )
+
+[node name="Area" type="Area" parent="BusTrigger"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BusTrigger/Area"]
+transform = Transform( 1, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )

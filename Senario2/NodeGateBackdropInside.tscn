@@ -1,0 +1,32 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 4.34814
+margin_top = 133.671
+margin_right = 118.348
+margin_bottom = 173.671
+rect_rotation = -90.0
+text = "BUS OUTSIDE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 26.0282
+margin_top = 59.9008
+margin_right = 66.0282
+margin_bottom = 120.901
+text = ">
+>
+>
+>"
+__meta__ = {
+"_edit_use_anchors_": false
+}

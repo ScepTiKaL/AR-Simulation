@@ -1,0 +1,254 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gui_panel_3d.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Senario2/StopCounter3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Senario2/StopCounter0.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Senario2/StopCounter2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Senario2/StopCounter1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Senario2/Png/you_have_boarded.png" type="Texture" id=7]
+[ext_resource path="res://Senario2/Senario2_Part2_Init.gd" type="Script" id=8]
+[ext_resource path="res://Senario2/notification_sound.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Senario2/Png/signal_the_driver.png" type="Texture" id=10]
+[ext_resource path="res://Senario2/NodeGateBackdropInside.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Senario2/INTNodeGateRight.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Senario2/INTNodeGateLeft.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Senario2/ExitTrigger.gd" type="Script" id=14]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="PlaneMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.270588, 0.262745, 0.262745, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.270588, 0.262745, 0.262745, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.270588, 0.262745, 0.262745, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.270588, 0.262745, 0.262745, 1 )
+
+[sub_resource type="CubeMesh" id=7]
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.545098, 0.270588, 0.0745098, 1 )
+
+[sub_resource type="PlaneMesh" id=9]
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0.545098, 0.270588, 0.0745098, 1 )
+
+[sub_resource type="CubeMesh" id=11]
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0.443137, 0.427451, 0.427451, 1 )
+
+[sub_resource type="PlaneMesh" id=13]
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 1, 0.12703, 1 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 8 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.0751636, 1, -2.251 )
+
+[node name="BusInterior" type="Spatial" parent="."]
+
+[node name="Floor" type="MeshInstance" parent="BusInterior"]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Wall1" type="MeshInstance" parent="BusInterior"]
+transform = Transform( -2.44381e-07, -1, 0, 1.5, -1.62921e-07, 0, 0, 0, 4, 2.89701, 1.52605, -0.0404522 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Wall2" type="MeshInstance" parent="BusInterior"]
+transform = Transform( 2.44381e-07, 1, -1.30337e-06, 1.5, -1.62921e-07, 0, -7.96295e-14, -3.25841e-07, -4, -2.88807, 1.52605, -0.0404522 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 4 )
+
+[node name="Wall3" type="MeshInstance" parent="BusInterior"]
+transform = Transform( 3.98147e-14, 1.62921e-07, 4, 1.5, -1.62921e-07, 0, 2.44381e-07, 1, -6.51683e-07, -0.0525489, 1.50049, -3.97693 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 5 )
+
+[node name="Wall4" type="MeshInstance" parent="BusInterior"]
+transform = Transform( -2.91421e-15, -1.19249e-08, -4, 1.5, -1.62921e-07, 0, -2.44381e-07, -1, 4.76995e-08, -0.0525489, 1.36982, 3.56051 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 6 )
+
+[node name="Roof" type="MeshInstance" parent="BusInterior"]
+transform = Transform( 3, -3.89414e-07, 1.55766e-06, -1.16824e-06, -1, 0, 1.16824e-06, -1.51644e-13, -4, -0.105496, 2.93958, -0.0404522 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Seat1" type="MeshInstance" parent="BusInterior"]
+transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 0.3, 1.79477, 0.116313, 2.29618 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
+
+[node name="SeatBack" type="MeshInstance" parent="BusInterior/Seat1"]
+transform = Transform( 1, 0, 0, 0, 0.235787, 1.45771, 0, -0.64787, 0.235787, 0.00261211, 1.70477, 1.27541 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="SeatBack2" type="MeshInstance" parent="BusInterior/Seat1"]
+transform = Transform( -1.00675, -1.59835e-07, 0, 1.12197e-07, -0.167772, 2.13935, -3.08258e-07, 0.460949, 0.778661, 0.00261211, 1.70477, 1.27542 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="Seat2" type="MeshInstance" parent="BusInterior"]
+transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -1.82374, 0.116313, 2.29618 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
+
+[node name="SeatBack" type="MeshInstance" parent="BusInterior/Seat2"]
+transform = Transform( 1, 0, 0, 0, 0.235787, 1.45771, 0, -0.64787, 0.235787, 0.00261211, 1.70477, 1.27541 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="SeatBack2" type="MeshInstance" parent="BusInterior/Seat2"]
+transform = Transform( -1, -2.24649e-07, 0, 1.11439e-07, -0.235792, 1.38761, -3.06193e-07, 0.647868, 0.505021, 0.00261211, 1.70477, 1.27541 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="Seat3" type="MeshInstance" parent="BusInterior"]
+transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -1.82374, 0.116313, -0.130592 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
+
+[node name="SeatBack" type="MeshInstance" parent="BusInterior/Seat3"]
+transform = Transform( 1, 0, 0, 0, 0.235787, 1.45771, 0, -0.64787, 0.235787, 0.00261211, 1.70477, 1.27541 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="SeatBack2" type="MeshInstance" parent="BusInterior/Seat3"]
+transform = Transform( -1, -2.24649e-07, 0, 1.11439e-07, -0.235792, 1.38761, -3.06193e-07, 0.647868, 0.505021, 0.00261211, 1.70477, 1.27541 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="Seat4" type="MeshInstance" parent="BusInterior"]
+transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 0.3, 1.75893, 0.116313, -0.142607 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
+
+[node name="SeatBack" type="MeshInstance" parent="BusInterior/Seat4"]
+transform = Transform( 1, 0, 0, 0, 0.235787, 1.45771, 0, -0.64787, 0.235787, 0.00261211, 1.70477, 1.27541 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="SeatBack2" type="MeshInstance" parent="BusInterior/Seat4"]
+transform = Transform( -1, -2.24649e-07, 0, 1.11439e-07, -0.235792, 1.38761, -3.06193e-07, 0.647868, 0.505021, 0.00261211, 1.70477, 1.27541 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="Seat5" type="MeshInstance" parent="BusInterior"]
+transform = Transform( 1, 0, 0, 0, 0.2, 0, 0, 0, 0.3, 1.75893, 0.116313, -2.04006 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 8 )
+
+[node name="SeatBack" type="MeshInstance" parent="BusInterior/Seat5"]
+transform = Transform( 1, 0, 0, 0, 0.235787, 1.45771, 0, -0.64787, 0.235787, 0.00261211, 1.70477, 1.27541 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="SeatBack2" type="MeshInstance" parent="BusInterior/Seat5"]
+transform = Transform( -1, -2.2466e-07, 0, 1.11444e-07, -0.235815, 1.48536, -3.06191e-07, 0.647897, 0.540628, 0.00261211, 1.70477, 1.27541 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="DriverCabin" type="MeshInstance" parent="BusInterior"]
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 1, -1.90244, 0.774654, -2.83596 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="StopCounter3" parent="BusInterior" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, -1.85726, 1.90265, -1.64524 )
+gui_scene = ExtResource( 3 )
+
+[node name="StopCounter2" parent="BusInterior" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, -1.85726, 1.90265, -1.64524 )
+visible = false
+gui_scene = ExtResource( 5 )
+
+[node name="StopCounter1" parent="BusInterior" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, -1.85726, 1.90265, -1.64524 )
+visible = false
+gui_scene = ExtResource( 6 )
+
+[node name="StopCounter0" parent="BusInterior" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, -1.85726, 1.90265, -1.64524 )
+visible = false
+gui_scene = ExtResource( 4 )
+
+[node name="gatebackdrop" parent="BusInterior" instance=ExtResource( 2 )]
+transform = Transform( 1.85802e-14, -1.14044e-07, -1, -0.7, -1.14044e-07, 1.69407e-21, -1.14044e-07, 0.7, -1.62921e-07, 2.85815, 1.15865, -3.14219 )
+visible = false
+gui_scene = ExtResource( 11 )
+
+[node name="ExitTrigger" type="MeshInstance" parent="BusInterior"]
+transform = Transform( -1.62921e-07, -1, 1.62921e-07, 0, -1.62921e-07, -1, 1, -1.62921e-07, 2.65431e-14, 3.63251, 1.26426, -3.21707 )
+visible = false
+mesh = SubResource( 13 )
+material/0 = null
+script = ExtResource( 14 )
+
+[node name="Area" type="Area" parent="BusInterior/ExitTrigger"]
+
+[node name="CollisionShape" type="CollisionShape" parent="BusInterior/ExitTrigger/Area"]
+shape = SubResource( 14 )
+
+[node name="GateLeft" parent="BusInterior" instance=ExtResource( 2 )]
+transform = Transform( -3.64941e-08, -2.2365e-20, -1, 1.38556e-13, 0.224, 7.18848e-21, 0.224, -1.38556e-13, -1.62921e-07, 2.74173, 0.901974, -3.43567 )
+visible = false
+gui_scene = ExtResource( 13 )
+
+[node name="GateRight" parent="BusInterior" instance=ExtResource( 2 )]
+transform = Transform( -3.64941e-08, -2.24839e-20, -1, 1.38556e-13, 0.224, 5.56783e-21, 0.224, -1.38556e-13, -1.62921e-07, 2.75312, 0.903522, -2.82206 )
+visible = false
+gui_scene = ExtResource( 12 )
+
+[node name="boarded_notification" type="TextureRect" parent="."]
+margin_left = 7.55954
+margin_top = 7.55952
+margin_right = 904.56
+margin_bottom = 59.5595
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="signal_driver_notification" type="TextureRect" parent="."]
+visible = false
+margin_left = 7.55954
+margin_top = 7.55952
+margin_right = 904.56
+margin_bottom = 59.5595
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NotificationStream" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="pressE" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 3.00769
+margin_top = 543.317
+margin_right = 178.008
+margin_bottom = 560.317
+rect_scale = Vector2( 2, 2 )
+text = "Press E to signal the driver"
+__meta__ = {
+"_edit_use_anchors_": false
+}

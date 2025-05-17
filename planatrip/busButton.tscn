@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://planatrip/busIcon.png" type="Texture" id=1]
+[ext_resource path="res://planatrip/busButton.gd" type="Script" id=2]
+
+[node name="busButton" type="Control"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+toPoint = Vector2( 20, 20 )
+duration = 100.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 32.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="line" type="Line2D" parent="."]
+points = PoolVector2Array( 20, 20, 0, 0 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )

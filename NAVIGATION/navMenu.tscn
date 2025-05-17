@@ -1,0 +1,142 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+[ext_resource path="res://hamburger/settings.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hamburger/closeMenu.gd" type="Script" id=3]
+[ext_resource path="res://hamburger/help.tscn" type="PackedScene" id=4]
+[ext_resource path="res://NAVIGATION/temp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://NAVIGATION/navPanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://hamburger/Plan_a_trip.png" type="Texture" id=8]
+[ext_resource path="res://hamburger/Settings.png" type="Texture" id=11]
+[ext_resource path="res://hamburger/help.png" type="Texture" id=12]
+
+[node name="menuThing" type="Panel"]
+margin_right = 100.0
+margin_bottom = 468.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="."]
+margin_right = 32.0
+margin_bottom = 32.0
+text = "X"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="map" type="Button" parent="."]
+margin_left = 12.5
+margin_top = 40.0
+margin_right = 87.5
+margin_bottom = 115.0
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+gui = ExtResource( 5 )
+gui_panel = ExtResource( 6 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="map"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="map/VBoxContainer"]
+margin_right = 75.0
+margin_bottom = 60.0
+texture = ExtResource( 8 )
+
+[node name="CenterContainer" type="CenterContainer" parent="map/VBoxContainer"]
+margin_top = 64.0
+margin_right = 75.0
+margin_bottom = 78.0
+
+[node name="Label" type="Label" parent="map/VBoxContainer/CenterContainer"]
+margin_left = 24.0
+margin_right = 51.0
+margin_bottom = 14.0
+text = "Map"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settings" type="Button" parent="."]
+margin_left = 12.5
+margin_top = 280.0
+margin_right = 87.5
+margin_bottom = 355.0
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+gui = ExtResource( 2 )
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="settings"]
+margin_right = 75.0
+margin_bottom = 78.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="settings/VBoxContainer4"]
+margin_right = 75.0
+margin_bottom = 60.0
+texture = ExtResource( 11 )
+
+[node name="CenterContainer" type="CenterContainer" parent="settings/VBoxContainer4"]
+margin_top = 64.0
+margin_right = 75.0
+margin_bottom = 78.0
+
+[node name="Label" type="Label" parent="settings/VBoxContainer4/CenterContainer"]
+margin_left = 12.0
+margin_right = 63.0
+margin_bottom = 14.0
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="help" type="Button" parent="."]
+margin_left = 12.5
+margin_top = 360.0
+margin_right = 87.5
+margin_bottom = 435.0
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+gui = ExtResource( 4 )
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="help"]
+margin_right = 75.0
+margin_bottom = 78.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="help/VBoxContainer5"]
+margin_right = 75.0
+margin_bottom = 60.0
+texture = ExtResource( 12 )
+
+[node name="CenterContainer" type="CenterContainer" parent="help/VBoxContainer5"]
+margin_top = 64.0
+margin_right = 75.0
+margin_bottom = 78.0
+
+[node name="Label" type="Label" parent="help/VBoxContainer5/CenterContainer"]
+margin_left = 23.0
+margin_right = 51.0
+margin_bottom = 14.0
+text = "help"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://planatrip/routeTimeList.gd" type="Script" id=1]
+[ext_resource path="res://hamburger/exit.gd" type="Script" id=2]
+
+[node name="listEmpty" type="Panel"]
+margin_right = 280.0
+margin_bottom = 180.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 2.0
+margin_top = 20.0
+margin_right = 278.0
+margin_bottom = 178.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 280.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="listName" type="Label" parent="CenterContainer"]
+margin_left = 121.0
+margin_top = 3.0
+margin_right = 159.0
+margin_bottom = 17.0
+text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+text = "X"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

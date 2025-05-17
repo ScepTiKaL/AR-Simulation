@@ -1,0 +1,130 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://hamburger/exit.gd" type="Script" id=1]
+
+[node name="Control" type="Panel"]
+margin_right = 280.0
+margin_bottom = 180.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 278.0
+margin_bottom = 178.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_right = 276.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/CenterContainer"]
+margin_left = 123.0
+margin_right = 153.0
+margin_bottom = 14.0
+text = "Help"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 276.0
+margin_bottom = 22.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 26.0
+margin_right = 276.0
+margin_bottom = 152.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+margin_right = 276.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 0, 14 )
+text = "Left click to interact"
+scroll_active = false
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 276.0
+margin_bottom = 22.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 276.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 14 )
+text = "Plan a trip opens map"
+scroll_active = false
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 276.0
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+margin_top = 52.0
+margin_right = 276.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 0, 14 )
+text = "Use Tracked to see tracked routes"
+scroll_active = false
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/VBoxContainer"]
+margin_top = 70.0
+margin_right = 276.0
+margin_bottom = 74.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+margin_top = 78.0
+margin_right = 276.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 0, 14 )
+text = "Use Favourites to see favourited routes"
+scroll_active = false
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/VBoxContainer"]
+margin_top = 96.0
+margin_right = 276.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+margin_top = 104.0
+margin_right = 276.0
+margin_bottom = 118.0
+rect_min_size = Vector2( 0, 14 )
+text = "Use Settings to change settings"
+scroll_active = false
+
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer/VBoxContainer"]
+margin_top = 122.0
+margin_right = 276.0
+margin_bottom = 126.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "X"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
